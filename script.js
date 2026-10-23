@@ -17,14 +17,16 @@
 // STEP 1: Create an array called "colors" with exactly
 //         three strings: "red", "green", "blue"
 //         Use let to declare it.
-
+let colors = ["red", "green", "blue"];
+for (let i=0; i<=2; i++) {
+    console.log("Color: " + colors[i]);
+}
 // STEP 2: Use a for loop to print each color.
 //         Each line should say exactly:
 //         "Color: red"
 //         "Color: green"
 //         "Color: blue"
 //         Use: console.log("Color: " + colors[i])
-
 
 // ============================================
 //  MAIN: Number Analyzer
@@ -34,7 +36,17 @@
 
 // STEP 3: Create an empty array called "numbers" using let.
 //         let numbers = [];
-
+let numbers = [];
+for (let i=0; i<=4; i++) {
+    let a = parseFloat(prompt("Enter number " + (i+1)));
+    numbers.push(a);
+}
+let x = "";
+for (let i=0; i<4; i++)  {
+    x = x + numbers[i] + ", ";
+}
+x = x + numbers[4]
+console.log("Numbers: " + x);
 // STEP 4: Use a for loop that runs 5 times (i = 0 to 4).
 //         Inside the loop:
 //         a) Use prompt() to ask "Enter number " + (i + 1)
@@ -54,18 +66,42 @@
 // STEP 6: Calculate the sum of all numbers.
 //         Use a for loop to add each number to a running total.
 //         Print: console.log("Sum: " + sum)
-
+let sum = 0;
+for (let i=0; i<5; i++) {
+    sum = sum + numbers[i];
+}
+console.log("Sum: " + sum);
 // STEP 7: Calculate the average.
 //         Average = sum / numbers.length
 //         Print: console.log("Average: " + average)
 //         (No rounding needed)
-
+let Avg = sum / numbers.length;
+console.log("Average: " + Avg);
 // STEP 8: Count how many numbers are even.
 //         A number is even if number % 2 equals 0.
 //         Use a for loop and an if statement.
 //         Print: console.log("Even count: " + count)
-
+let even = 0;
+for (let i=0; i<5; i++) {
+    if (numbers[i]%2 === 0) {
+        even = even + 1; 
+    }
+    else {
+        even = even;
+    }
+}
+console.log("Even count: " + even);
 // STEP 9: Find the largest number.
 //         Start with the first number as the largest.
 //         Loop through the rest and update if you find a bigger one.
 //         Print: console.log("Largest: " + largest)
+let largest = numbers[0];
+for (let i = 0; i<=4; i++) {
+    if (numbers[i]>largest) {
+        largest = numbers[i+1];
+    } 
+    else {
+        largest = largest;
+    }
+}
+console.log("Largest: " + largest);
